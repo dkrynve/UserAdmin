@@ -7,11 +7,11 @@ goto check_Permissions
     net session >nul 2>&1
     if %errorLevel% == 0 (
         ::echo Success: Administrative permissions confirmed.
-		echo %Username% > \\defsus\ComputersWithRights\ByUser\%ComputerName%.txt
-		echo %ComputerName% > \\defsus\ComputersWithRights\ByComputer\%Username%.txt
+		echo %ComputerName% > \\defsus\ComputersWithRights\ByUser\%Username%.txt
+		echo %Username% > \\defsus\ComputersWithRights\ByComputer\%ComputerName%.txt
     ) else (
         ::echo Failure: Current permissions inadequate.
-		echo %Username% > \\defsus\ComputersWithoutRights\ByUser\%ComputerName%.txt
-		echo %ComputerName% > \\defsus\ComputersWithoutRights\ByComputer\%Username%.txt
+		echo %ComputerName% > \\defsus\ComputersWithoutRights\ByUser\%Username%.txt
+		echo %Username% > \\defsus\ComputersWithoutRights\ByComputer\%ComputerName%.txt
     )
 
